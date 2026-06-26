@@ -1,30 +1,986 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Lokal Pertamaku</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Koperasi Konsumen Makmur Sejahtera</title>
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kopigreen: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        kopigold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased overflow-x-hidden">
 
-    <header>
-        <h1>Selamat Datang di Web Lokalku!</h1>
-        <p>Ini adalah website sederhana yang dibuat menggunakan VS Code.</p>
+    <!-- NAVIGASI UTAMA -->
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Nama Koperasi -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-kopigreen-700 flex items-center justify-center text-white text-xl shadow-md shadow-kopigreen-800/20">
+                        <i class="fa-solid fa-users-line"></i>
+                    </div>
+                    <div>
+                        <span class="block font-heading font-bold text-lg text-kopigreen-900 leading-tight">KOP-MAKMUR</span>
+                        <span class="block text-xs font-semibold tracking-wider text-kopigold-600 uppercase">Sejahtera Bersama</span>
+                    </div>
+                </div>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#beranda" class="font-medium text-kopigreen-900 hover:text-kopigreen-700 transition-colors">Beranda</a>
+                    <a href="#tentang" class="font-medium text-slate-600 hover:text-kopigreen-700 transition-colors">Tentang Kami</a>
+                    <a href="#layanan" class="font-medium text-slate-600 hover:text-kopigreen-700 transition-colors">Unit Usaha</a>
+                    <a href="#simulasi" class="font-medium text-slate-600 hover:text-kopigreen-700 transition-colors">Simulasi</a>
+                    <a href="#gabung" class="font-medium text-slate-600 hover:text-kopigreen-700 transition-colors">Gabung</a>
+                    <a href="#kontak" class="font-medium text-slate-600 hover:text-kopigreen-700 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Tombol CTA Desktop -->
+                <div class="hidden md:block">
+                    <a href="#gabung" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-kopigreen-700 hover:bg-kopigreen-800 text-white font-medium text-sm transition-all shadow-md shadow-kopigreen-700/10 hover:shadow-lg hover:-translate-y-0.5">
+                        <i class="fa-solid fa-user-plus mr-2"></i> Daftar Anggota
+                    </a>
+                </div>
+
+                <!-- Tombol Menu Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-kopigreen-700 focus:outline-none" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 transition-all duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-3">
+                <a href="#beranda" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-kopigreen-50 hover:text-kopigreen-700">Beranda</a>
+                <a href="#tentang" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-kopigreen-50 hover:text-kopigreen-700">Tentang Kami</a>
+                <a href="#layanan" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-kopigreen-50 hover:text-kopigreen-700">Unit Usaha</a>
+                <a href="#simulasi" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-kopigreen-50 hover:text-kopigreen-700">Simulasi</a>
+                <a href="#gabung" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-kopigreen-50 hover:text-kopigreen-700">Gabung</a>
+                <a href="#kontak" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-kopigreen-50 hover:text-kopigreen-700">Kontak</a>
+                <a href="#gabung" class="mobile-link block w-full text-center px-4 py-3 rounded-lg bg-kopigreen-700 text-white font-medium text-base hover:bg-kopigreen-800">
+                    <i class="fa-solid fa-user-plus mr-2"></i> Daftar Anggota
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section class="konten">
-            <h2>Tentang Project Ini</h2>
-            <p>Web ini dibuat untuk belajar dasar-dasar HTML, CSS, dan JavaScript secara lokal.</p>
-            <button id="tombolAksi">Klik Saya!</button>
-        </section>
-    </main>
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-br from-kopigreen-900 via-kopigreen-800 to-emerald-950 text-white">
+        <!-- Dekorasi Background -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-emerald-500/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-kopigold-400/10 blur-3xl pointer-events-none"></div>
 
-    <footer>
-        <p>&copy; 2026 - Dibuat dengan Semangat</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Kolom Teks -->
+                <div class="md:col-span-7 text-center md:text-left space-y-6">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-kopigold-400 text-xs font-semibold tracking-wider uppercase border border-white/10">
+                        <i class="fa-solid fa-star text-[10px]"></i> Koperasi Konsumen Terpercaya
+                    </span>
+                    <h1 class="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight">
+                        Membangun Ekonomi Bersama, <span class="text-kopigold-400">Sejahtera</span> untuk Semua
+                    </h1>
+                    <p class="text-slate-300 text-lg md:text-xl font-normal max-w-2xl leading-relaxed">
+                        Koperasi Konsumen Makmur Sejahtera hadir sebagai pilar kemandirian ekonomi anggota berasaskan kekeluargaan, gotong royong, dan transparansi berkelanjutan.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                        <a href="#gabung" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-kopigold-500 hover:bg-kopigold-600 text-kopigreen-900 font-bold text-base transition-all shadow-lg shadow-kopigold-500/20 hover:shadow-xl hover:-translate-y-0.5">
+                            Gabung Sekarang <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#tentang" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-base transition-all border border-white/20">
+                            Pelajari Layanan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom Gambar -->
+                <div class="md:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md md:max-w-none">
+                        <!-- Frame Gold Cantik -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-tr from-kopigold-500 to-emerald-400 rounded-3xl blur-md opacity-40"></div>
+                        <!-- Gambar Riil Kooperasi -->
+                        <div class="relative bg-white p-2 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="http://googleusercontent.com/image_collection/image_retrieval/7178880692806047911_0" alt="Anggota Koperasi Berkumpul" class="w-full h-[380px] object-cover rounded-2xl">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTIK / HIGHLIGHTS -->
+    <section class="relative z-20 -mt-10 max-w-6xl mx-auto px-4">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="space-y-1">
+                <span class="block font-heading font-bold text-3xl md:text-4xl text-kopigreen-800">10+</span>
+                <span class="block text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Tahun Berdiri</span>
+            </div>
+            <div class="space-y-1 border-l border-slate-100">
+                <span class="block font-heading font-bold text-3xl md:text-4xl text-kopigreen-800">2,500+</span>
+                <span class="block text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Anggota Aktif</span>
+            </div>
+            <div class="space-y-1 border-l border-slate-100">
+                <span class="block font-heading font-bold text-3xl md:text-4xl text-kopigreen-800">Rp 12M+</span>
+                <span class="block text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Total Aset</span>
+            </div>
+            <div class="space-y-1 border-l border-slate-100">
+                <span class="block font-heading font-bold text-3xl md:text-4xl text-kopigreen-800">100%</span>
+                <span class="block text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Transparan</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI (TAB INTERAKTIF) -->
+    <section id="tentang" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Kolom Gambar -->
+                <div class="md:col-span-5 order-last md:order-first">
+                    <div class="relative">
+                        <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-kopigreen-100 rounded-3xl -z-10"></div>
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/7178880692806047911_1" alt="Rapat Pengurus Koperasi" class="w-full h-[450px] object-cover rounded-3xl shadow-xl">
+                    </div>
+                </div>
+
+                <!-- Kolom Informasi Interaktif -->
+                <div class="md:col-span-7 space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Profil Lembaga</span>
+                        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">Mengenal Lebih Dekat Koperasi Kami</h2>
+                    </div>
+
+                    <!-- Pilihan Tab Menu -->
+                    <div class="flex border-b border-slate-200">
+                        <button onclick="switchTab('tab-profil')" id="btn-tab-profil" class="tab-btn py-3 px-6 font-semibold text-sm border-b-2 border-kopigreen-700 text-kopigreen-700 transition-all focus:outline-none">
+                            Profil Umum
+                        </button>
+                        <button onclick="switchTab('tab-visi')" id="btn-tab-visi" class="tab-btn py-3 px-6 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-kopigreen-700 transition-all focus:outline-none">
+                            Visi & Misi
+                        </button>
+                        <button onclick="switchTab('tab-legalitas')" id="btn-tab-legalitas" class="tab-btn py-3 px-6 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-kopigreen-700 transition-all focus:outline-none">
+                            Legalitas Resmi
+                        </button>
+                    </div>
+
+                    <!-- Konten Tab -->
+                    <div class="pt-4 min-h-[220px]">
+                        <!-- Tab 1: Profil -->
+                        <div id="tab-profil" class="tab-content block space-y-4 text-slate-600 leading-relaxed">
+                            <p>
+                                Didirikan dengan semangat kekeluargaan, **Koperasi Konsumen Makmur Sejahtera** berkomitmen meningkatkan kesejahteraan anggotanya melalui integrasi berbagai unit bisnis retail, keuangan mikro, dan kemitraan strategis.
+                            </p>
+                            <p>
+                                Melalui sistem manajemen yang profesional, transparan, dan berbasis teknologi informasi, kami memastikan partisipasi aktif setiap anggota dihargai secara adil, termasuk dalam pembagian Sisa Hasil Usaha (SHU) tahunan.
+                            </p>
+                        </div>
+
+                        <!-- Tab 2: Visi & Misi -->
+                        <div id="tab-visi" class="tab-content hidden space-y-4 text-slate-600">
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-900 mb-1">Visi Kami</h4>
+                                <p class="italic">"Menjadi koperasi konsumen terdepan, modern, mandiri, dan terpercaya di Indonesia guna melahirkan masyarakat yang sejahtera secara berkelanjutan."</p>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-900 mb-2">Misi Kami</h4>
+                                <ul class="space-y-2 pl-4 list-decimal">
+                                    <li>Menyelenggarakan layanan simpan pinjam yang aman, mudah, dan edukatif bagi pengembangan UMKM anggota.</li>
+                                    <li>Menyediakan kebutuhan harian berkualitas melalui Unit Toko Swalayan Koperasi dengan harga kompetitif.</li>
+                                    <li>Meningkatkan kapasitas sdm kepengurusan dan digitalisasi sistem koperasi agar transparan dan adaptif.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3: Legalitas -->
+                        <div id="tab-legalitas" class="tab-content hidden space-y-4 text-slate-600">
+                            <p>Kami beroperasi secara sah berdasarkan hukum Republik Indonesia dan diawasi langsung oleh Kementerian Koperasi dan UKM:</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                                <div class="bg-white p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                                    <i class="fa-solid fa-file-signature text-kopigreen-700 text-xl"></i>
+                                    <div>
+                                        <span class="block text-xs text-slate-400 font-medium">No. Badan Hukum</span>
+                                        <span class="block text-sm font-semibold text-slate-800">AHU-001245.AH.01.26</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-slate-100 flex items-center gap-3">
+                                    <i class="fa-solid fa-building-columns text-kopigreen-700 text-xl"></i>
+                                    <div>
+                                        <span class="block text-xs text-slate-400 font-medium">NIB (Nomor Induk Berusaha)</span>
+                                        <span class="block text-sm font-semibold text-slate-800">9120301429824</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN UTAMA (UNIT USAHA) -->
+    <section id="layanan" class="py-20 bg-emerald-950 text-white relative overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-kopigreen-700/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-kopigold-400/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <span class="text-kopigold-400 font-bold tracking-wider text-sm uppercase">Solusi Bersama</span>
+                <h2 class="font-heading font-bold text-3xl sm:text-4xl">Unit Usaha Unggulan Koperasi</h2>
+                <p class="text-slate-300">Kami mengelola beberapa lini bisnis utama demi memberikan kenyamanan, kemudahan, dan nilai tambah yang optimal bagi seluruh anggota aktif.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Unit 1: Simpan Pinjam -->
+                <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-kopigold-400/50 transition-all group hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-kopigold-500/10 flex items-center justify-center text-kopigold-400 text-2xl mb-6 group-hover:bg-kopigold-500 group-hover:text-emerald-950 transition-all duration-300">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-white group-hover:text-kopigold-400 transition-colors">Simpan Pinjam</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Layanan tabungan aman dengan bunga kompetitif serta pembiayaan mikro berjangka dengan persyaratan yang sangat bersahabat dan transparan bagi anggota koperasi.
+                    </p>
+                    <a href="#simulasi" class="inline-flex items-center text-sm font-semibold text-kopigold-400 group-hover:text-white transition-colors">
+                        Mulai Simulasi <i class="fa-solid fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Unit 2: Retail / Waserda -->
+                <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-kopigold-400/50 transition-all group hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-kopigold-500/10 flex items-center justify-center text-kopigold-400 text-2xl mb-6 group-hover:bg-kopigold-500 group-hover:text-emerald-950 transition-all duration-300">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-white group-hover:text-kopigold-400 transition-colors">Toserba & Waserda</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Menyediakan kebutuhan pokok harian rumah tangga anggota dengan harga khusus di bawah pasar umum. Berbelanja hemat sekaligus meningkatkan perputaran SHU.
+                    </p>
+                    <a href="#kontak" class="inline-flex items-center text-sm font-semibold text-kopigold-400 group-hover:text-white transition-colors">
+                        Lokasi Toko <i class="fa-solid fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <!-- Unit 3: Kemitraan UMKM -->
+                <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-kopigold-400/50 transition-all group hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-kopigold-500/10 flex items-center justify-center text-kopigold-400 text-2xl mb-6 group-hover:bg-kopigold-500 group-hover:text-emerald-950 transition-all duration-300">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-white group-hover:text-kopigold-400 transition-colors">Kemitraan UMKM</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Membantu memasarkan produk-produk UMKM milik anggota secara digital maupun offline, serta memberikan pendampingan pengelolaan manajemen keuangan usaha.
+                    </p>
+                    <a href="#gabung" class="inline-flex items-center text-sm font-semibold text-kopigold-400 group-hover:text-white transition-colors">
+                        Hubungkan Usaha <i class="fa-solid fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KENAPA MEMILIH KAMI? -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Kolom Teks -->
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Keunggulan Koperasi</span>
+                        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">Mengapa Menjadi Anggota Koperasi Kami?</h2>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed">
+                        Kami mengutamakan kesederhanaan proses, keamanan finansial, serta keterbukaan dalam pembagian SHU agar anggota dapat fokus mengembangkan potensi finansial keluarga tanpa cemas.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 flex items-center justify-center w-6 h-6 rounded-full bg-kopigreen-100 text-kopigreen-700 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Bunga Ringan & Fleksibel</h4>
+                                <p class="text-slate-500 text-sm">Bunga pinjaman menurun yang rendah untuk kemudahan modal produktif usaha.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 flex items-center justify-center w-6 h-6 rounded-full bg-kopigreen-100 text-kopigreen-700 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Pembagian SHU Adil</h4>
+                                <p class="text-slate-500 text-sm">Keuntungan koperasi dibagikan secara transparan di setiap Rapat Anggota Tahunan (RAT).</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 flex items-center justify-center w-6 h-6 rounded-full bg-kopigreen-100 text-kopigreen-700 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Pendaftaran Berbasis Online</h4>
+                                <p class="text-slate-500 text-sm">Pantau simpanan dan lakukan pendaftaran secara cepat dan efisien tanpa harus mengantre lama.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Ilustrasi Kreatif -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-kopigreen-700 to-emerald-400 rounded-3xl opacity-10 blur-xl pointer-events-none"></div>
+                    <div class="bg-kopigreen-50 p-8 rounded-3xl border border-kopigreen-100 relative">
+                        <h3 class="font-heading font-bold text-2xl text-kopigreen-900 mb-6 text-center">Fasilitas Anggota</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
+                                <i class="fa-solid fa-sack-dollar text-3xl text-kopigold-500 mb-3"></i>
+                                <h5 class="font-bold text-slate-900 text-sm">Simpanan Sukarela</h5>
+                                <p class="text-slate-400 text-xs mt-1">Fleksibel diambil kapan saja</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
+                                <i class="fa-solid fa-umbrella text-3xl text-kopigreen-700 mb-3"></i>
+                                <h5 class="font-bold text-slate-900 text-sm">Dana Sosial</h5>
+                                <p class="text-slate-400 text-xs mt-1">Santunan rawat & duka</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
+                                <i class="fa-solid fa-graduation-cap text-3xl text-kopigreen-700 mb-3"></i>
+                                <h5 class="font-bold text-slate-900 text-sm">Beasiswa Anak</h5>
+                                <p class="text-slate-400 text-xs mt-1">Bagi putra/putri berprestasi</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
+                                <i class="fa-solid fa-cart-shopping text-3xl text-kopigold-500 mb-3"></i>
+                                <h5 class="font-bold text-slate-900 text-sm">Potongan Retail</h5>
+                                <p class="text-slate-400 text-xs mt-1">Diskon belanja Waserda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULASI KALKULATOR INTERAKTIF -->
+    <section id="simulasi" class="py-20 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Coba Sekarang</span>
+                <h2 class="font-heading font-bold text-3xl text-slate-900">Simulasi Simpanan & Pinjaman</h2>
+                <p class="text-slate-500 text-sm max-w-lg mx-auto">Gunakan kalkulator interaktif di bawah ini untuk melihat estimasi keuangan Anda secara cepat sebelum berkonsultasi.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+                <!-- Header Pilihan Simulasi -->
+                <div class="flex border-b border-slate-200 bg-slate-50">
+                    <button onclick="switchCalc('calc-pinjaman')" id="btn-calc-pinjaman" class="calc-tab-btn flex-1 py-4 text-center font-heading font-bold text-base border-b-2 border-kopigreen-700 text-kopigreen-700 transition-all focus:outline-none">
+                        <i class="fa-solid fa-hand-holding-dollar mr-2"></i> Simulasi Pinjaman
+                    </button>
+                    <button onclick="switchCalc('calc-simpanan')" id="btn-calc-simpanan" class="calc-tab-btn flex-1 py-4 text-center font-heading font-bold text-base border-b-2 border-transparent text-slate-500 hover:text-kopigreen-700 transition-all focus:outline-none">
+                        <i class="fa-solid fa-piggy-bank mr-2"></i> Simulasi Tabungan/Simpanan
+                    </button>
+                </div>
+
+                <!-- Area Formulir Kalkulator -->
+                <div class="p-8">
+                    <!-- Kalkulator 1: Pinjaman -->
+                    <div id="calc-pinjaman" class="calc-content block space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-700">Jumlah Pinjaman (Rupiah)</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold">Rp</span>
+                                    <input type="number" id="pinjam-nominal" value="10000000" step="500000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" oninput="hitungPinjaman()">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-700">Jangka Waktu / Tenor</label>
+                                <select id="pinjam-tenor" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" onchange="hitungPinjaman()">
+                                    <option value="6">6 Bulan</option>
+                                    <option value="12" selected>12 Bulan</option>
+                                    <option value="24">24 Bulan</option>
+                                    <option value="36">36 Bulan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Hasil Kalkulasi Pinjaman -->
+                        <div class="bg-kopigreen-50 rounded-2xl p-6 border border-kopigreen-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <div>
+                                <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider">Estimasi Angsuran per Bulan</span>
+                                <span id="pinjam-hasil-angsuran" class="block font-heading font-extrabold text-3xl text-kopigreen-900 mt-1">Rp 933.333</span>
+                                <span class="block text-[11px] text-slate-400 mt-1">*Sudah termasuk jasa/bunga 1.0% per bulan (tetap)</span>
+                            </div>
+                            <a href="#gabung" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-kopigreen-700 hover:bg-kopigreen-800 text-white font-bold text-sm transition-all shadow-md shadow-kopigreen-800/10">
+                                Ajukan Pembiayaan
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kalkulator 2: Simpanan -->
+                    <div id="calc-simpanan" class="calc-content hidden space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-700">Setoran Awal (Rupiah)</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold">Rp</span>
+                                    <input type="number" id="simpan-nominal" value="1000000" step="100000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" oninput="hitungSimpanan()">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-700">Setoran Rutin Bulanan</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold">Rp</span>
+                                    <input type="number" id="simpan-rutin" value="200000" step="50000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" oninput="hitungSimpanan()">
+                                </div>
+                            </div>
+                            <div class="space-y-2 sm:col-span-2">
+                                <label class="block text-sm font-bold text-slate-700">Durasi Menabung</label>
+                                <select id="simpan-durasi" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" onchange="hitungSimpanan()">
+                                    <option value="12" selected>1 Tahun (12 Bulan)</option>
+                                    <option value="24">2 Tahun (24 Bulan)</option>
+                                    <option value="36">3 Tahun (36 Bulan)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Hasil Kalkulasi Simpanan -->
+                        <div class="bg-kopigreen-50 rounded-2xl p-6 border border-kopigreen-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <div>
+                                <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider">Estimasi Total Hasil Tabungan</span>
+                                <span id="simpan-hasil-total" class="block font-heading font-extrabold text-3xl text-kopigreen-900 mt-1">Rp 3.520.000</span>
+                                <span class="block text-[11px] text-slate-400 mt-1">*Estimasi bunga/bagi hasil setara 5% per tahun</span>
+                            </div>
+                            <a href="#gabung" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-kopigreen-700 hover:bg-kopigreen-800 text-white font-bold text-sm transition-all shadow-md shadow-kopigreen-800/10">
+                                Mulai Menabung
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALUR GABUNG ANGGOTA -->
+    <section id="gabung" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Langkah Mudah</span>
+                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">Alur Keanggotaan Koperasi</h2>
+                <p class="text-slate-500">Bergabung menjadi keluarga besar koperasi dan mulai nikmati seluruh fasilitas eksklusif hanya dalam 4 langkah terstruktur.</p>
+            </div>
+
+            <!-- Grid Alur -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <!-- Langkah 1 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative group hover:bg-kopigreen-50/50 transition-colors">
+                    <span class="absolute top-4 right-4 font-heading font-extrabold text-5xl text-kopigreen-100 group-hover:text-kopigreen-200 transition-colors">01</span>
+                    <div class="w-12 h-12 rounded-xl bg-kopigreen-600 flex items-center justify-center text-white text-lg font-bold mb-6">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Isi Formulir</h3>
+                    <p class="text-slate-500 text-sm">Mengisi biodata lengkap secara online atau berkunjung langsung ke kantor koperasi kami.</p>
+                </div>
+
+                <!-- Langkah 2 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative group hover:bg-kopigreen-50/50 transition-colors">
+                    <span class="absolute top-4 right-4 font-heading font-extrabold text-5xl text-kopigreen-100 group-hover:text-kopigreen-200 transition-colors">02</span>
+                    <div class="w-12 h-12 rounded-xl bg-kopigreen-600 flex items-center justify-center text-white text-lg font-bold mb-6">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Verifikasi Data</h3>
+                    <p class="text-slate-500 text-sm">Tim administrasi akan memproses kelayakan data diri dan identitas KTP yang dilampirkan.</p>
+                </div>
+
+                <!-- Langkah 3 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative group hover:bg-kopigreen-50/50 transition-colors">
+                    <span class="absolute top-4 right-4 font-heading font-extrabold text-5xl text-kopigreen-100 group-hover:text-kopigreen-200 transition-colors">03</span>
+                    <div class="w-12 h-12 rounded-xl bg-kopigreen-600 flex items-center justify-center text-white text-lg font-bold mb-6">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Simpanan Pokok</h3>
+                    <p class="text-slate-500 text-sm">Membayar Simpanan Pokok (Rp 100.000 sekali bayar) & Simpanan Wajib awal (Rp 25.000/bln).</p>
+                </div>
+
+                <!-- Langkah 4 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative group hover:bg-kopigreen-50/50 transition-colors">
+                    <span class="absolute top-4 right-4 font-heading font-extrabold text-5xl text-kopigreen-100 group-hover:text-kopigreen-200 transition-colors">04</span>
+                    <div class="w-12 h-12 rounded-xl bg-kopigreen-600 flex items-center justify-center text-white text-lg font-bold mb-6">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 mb-2">Resmi Terdaftar</h3>
+                    <p class="text-slate-500 text-sm">Anda mendapatkan nomor kartu anggota koperasi dan berhak menikmati semua layanan terpadu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI ANGGOTA -->
+    <section class="py-20 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Testimonial</span>
+                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">Apa Kata Mereka?</h2>
+                <p class="text-slate-500">Cerita nyata dari para anggota koperasi yang telah berkolaborasi dalam meningkatkan taraf ekonomi keluarga.</p>
+            </div>
+
+            <!-- Grid Testimoni -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative">
+                    <span class="absolute -top-3 -left-3 text-7xl text-kopigreen-100 font-serif leading-none">“</span>
+                    <div class="flex items-center gap-1 text-kopigold-500 mb-4 relative z-10">
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 relative z-10">
+                        "Berkat pembiayaan usaha modal kerja yang mudah dari koperasi ini, warung kelontong saya sekarang bisa berkembang pesat dan menambah variasi barang dagangan."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-kopigreen-900 flex items-center justify-center text-sm uppercase">
+                            H
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm">Hj. Herawati</h5>
+                            <span class="block text-xs text-slate-400">Pemilik Warung Kelontong</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative">
+                    <span class="absolute -top-3 -left-3 text-7xl text-kopigreen-100 font-serif leading-none">“</span>
+                    <div class="flex items-center gap-1 text-kopigold-500 mb-4 relative z-10">
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 relative z-10">
+                        "Sebagai anggota, saya sangat mengapresiasi keterbukaan pelaporan keuangan. Pembagian SHU tahunan selalu dibayarkan tepat waktu sesuai proporsi transaksi kita."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-kopigreen-900 flex items-center justify-center text-sm uppercase">
+                            B
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm">Budi Santoso</h5>
+                            <span class="block text-xs text-slate-400">Pegawai Swasta & Anggota</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative">
+                    <span class="absolute -top-3 -left-3 text-7xl text-kopigreen-100 font-serif leading-none">“</span>
+                    <div class="flex items-center gap-1 text-kopigold-500 mb-4 relative z-10">
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 relative z-10">
+                        "Diskon belanja di Waserda sangat membantu penghematan pengeluaran bulanan keluarga saya. Belanja harian terasa jauh lebih murah dari supermarket luar."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-kopigreen-900 flex items-center justify-center text-sm uppercase">
+                            S
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm">Siti Aminah</h5>
+                            <span class="block text-xs text-slate-400">Ibu Rumah Tangga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HUBUNGI KAMI & KONTAK -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12">
+                
+                <!-- Info Kontak Kiri -->
+                <div class="md:col-span-5 space-y-8">
+                    <div class="space-y-3">
+                        <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Kontak Resmi</span>
+                        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">Hubungi Kantor Kami</h2>
+                        <p class="text-slate-500">Ada pertanyaan seputar pendaftaran, nominal simpanan wajib, atau rencana kemitraan usaha? Hubungi pengurus kami segera.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-kopigreen-50 flex items-center justify-center text-kopigreen-700 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Alamat Kantor Utama</h4>
+                                <p class="text-slate-500 text-sm mt-1">Jl. Raya Hijau Makmur No. 88, Blok C-5, Kebayoran Baru, Jakarta Selatan, 12130</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-kopigreen-50 flex items-center justify-center text-kopigreen-700 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Surel / Email</h4>
+                                <p class="text-slate-500 text-sm mt-1">info@kopmakmursejahtera.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-kopigreen-50 flex items-center justify-center text-kopigreen-700 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Telepon & WhatsApp</h4>
+                                <p class="text-slate-500 text-sm mt-1">(021) 8877-6655<br>+62 812-3456-7890 (Admin Utama)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulir Kontak Kanan -->
+                <div class="md:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="font-heading font-bold text-2xl text-slate-900 mb-6">Kirim Pesan Langsung</h3>
+                    
+                    <!-- Alert Message (Hidden initially) -->
+                    <div id="contact-alert" class="hidden mb-6 p-4 rounded-xl bg-kopigreen-100 border border-kopigreen-200 text-kopigreen-800 text-sm flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-lg"></i>
+                        <span>Pesan Anda telah berhasil dikirim! Pengurus akan segera menghubungi Anda melalui nomor telepon / email.</span>
+                    </div>
+
+                    <form id="contact-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Nama Lengkap</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700 bg-white">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Nomor WhatsApp/HP</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700 bg-white">
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Alamat Email (Opsional)</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700 bg-white">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Topik Hubungan</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700 bg-white">
+                                <option>Informasi Pendaftaran Anggota</option>
+                                <option>Pengajuan Pinjaman / Pembiayaan</option>
+                                <option>Pembukaan Program Tabungan Baru</option>
+                                <option>Kemitraan UMKM / Lini Usaha</option>
+                                <option>Lain-lain</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Isi Pesan Pertanyaan</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700 bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl bg-kopigreen-700 hover:bg-kopigreen-800 text-white font-bold text-base transition-all shadow-md shadow-kopigreen-700/10">
+                            Kirim Pesan <i class="fa-solid fa-paper-plane ml-2 text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOTO GALLERY / BERSAMA ANGGOTA -->
+    <section class="py-12 bg-slate-50 border-t border-b border-slate-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-2xl group h-64">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/7178880692806047911_2" alt="Foto Kegiatan Koperasi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-kopigreen-950/70 via-transparent to-transparent flex items-end p-6">
+                        <span class="text-white font-semibold text-base">Rapat Anggota Tahunan (RAT)</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group h-64">
+                    <div class="absolute inset-0 bg-kopigreen-800/85 mix-blend-multiply transition-opacity group-hover:opacity-100 z-10 flex flex-col items-center justify-center p-6 text-center text-white opacity-0 duration-300">
+                        <i class="fa-solid fa-scale-balanced text-4xl mb-3 text-kopigold-400"></i>
+                        <h4 class="font-bold text-lg">Asas Keadilan</h4>
+                        <p class="text-xs text-slate-200 mt-2">Seluruh keputusan koperasi didasarkan atas mufakat seluruh suara anggota tanpa terkecuali.</p>
+                    </div>
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/7178880692806047911_0" alt="Foto Tim Koperasi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-kopigreen-950/70 via-transparent to-transparent flex items-end p-6 group-hover:hidden">
+                        <span class="text-white font-semibold text-base">Kolaborasi Komunitas Koperasi</span>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-kopigreen-800 to-kopigreen-900 rounded-2xl p-8 flex flex-col justify-center text-white">
+                    <h3 class="font-heading font-bold text-xl text-kopigold-400 mb-2">Mari Sejahtera Bersama</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6">Kami mengundang Anda untuk mendaftar sebagai anggota dan ikut berkontribusi membangun kemandirian ekonomi.</p>
+                    <a href="#gabung" class="inline-flex items-center text-sm font-bold text-white hover:text-kopigold-400 transition-colors">
+                        Pelajari Persyaratan <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Logo & Profil Koperasi -->
+                <div class="md:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-kopigreen-700 flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-users-line"></i>
+                        </div>
+                        <span class="font-heading font-bold text-lg text-white">Koperasi Makmur Sejahtera</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Lembaga keuangan mikro gotong royong yang berdedikasi tinggi memberikan kesejahteraan melalui kepemilikan saham usaha bersama secara merdeka dan adil.
+                    </p>
+                    <!-- Sosmed -->
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-kopigreen-700 hover:text-white transition-all flex items-center justify-center text-slate-400">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-kopigreen-700 hover:text-white transition-all flex items-center justify-center text-slate-400">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-kopigreen-700 hover:text-white transition-all flex items-center justify-center text-slate-400">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Link Cepat -->
+                <div class="md:col-span-4 md:col-start-6 space-y-4">
+                    <h4 class="font-heading font-bold text-white text-base">Halaman Menu</h4>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <a href="#beranda" class="hover:text-white transition-colors">Beranda</a>
+                        <a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a>
+                        <a href="#layanan" class="hover:text-white transition-colors">Unit Usaha</a>
+                        <a href="#simulasi" class="hover:text-white transition-colors">Simulasi Dana</a>
+                        <a href="#gabung" class="hover:text-white transition-colors">Alur Anggota</a>
+                        <a href="#kontak" class="hover:text-white transition-colors">Kontak Kami</a>
+                    </div>
+                </div>
+
+                <!-- Info Jam Kerja -->
+                <div class="md:col-span-3 space-y-4">
+                    <h4 class="font-heading font-bold text-white text-base">Jam Operasional Kantor</h4>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-kopigreen-600"></span>
+                            Senin - Jumat: 08.00 - 16.00 WIB
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-kopigreen-600"></span>
+                            Sabtu: 08.00 - 12.00 WIB
+                        </li>
+                        <li class="flex items-center gap-2 text-red-400">
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                            Minggu & Hari Libur: Tutup
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-white/5 my-8">
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <span>© <span id="current-year">2026</span> Koperasi Konsumen Makmur Sejahtera. Hak Cipta Dilindungi Undang-Undang.</span>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-white transition-colors">Ketentuan Layanan</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- TOMBOL WHATSAPP MELAYANG -->
+    <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Halo%20Admin%20Koperasi%20Makmur%20Sejahtera,%20saya%20tertarik%20untuk%20bergabung%20menjadi%20anggota." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center text-2xl shadow-xl hover:-translate-y-1 transition-all z-40" aria-label="Hubungi via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS & LOGIKA INTERAKTIF -->
+    <script>
+        // Set tahun hak cipta secara otomatis
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menutup menu mobile saat tautan menu diklik
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Tab Interaktif (Tentang Kami)
+        function switchTab(tabId) {
+            // Sembunyikan semua konten tab
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+
+            // Tampilkan konten tab yang dipilih
+            const targetContent = document.getElementById(tabId);
+            targetContent.classList.remove('hidden');
+            targetContent.classList.add('block');
+
+            // Hapus status aktif dari semua tombol tab
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-kopigreen-700', 'text-kopigreen-700');
+                btn.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            // Tambah status aktif ke tombol tab yang dipilih
+            const targetButton = document.getElementById('btn-' + tabId);
+            targetButton.classList.add('border-kopigreen-700', 'text-kopigreen-700');
+            targetButton.classList.remove('border-transparent', 'text-slate-500');
+        }
+
+        // 3. Tab Interaktif (Kalkulator Simulasi)
+        function switchCalc(calcId) {
+            // Sembunyikan semua kalkulator
+            const contents = document.querySelectorAll('.calc-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+
+            // Tampilkan kalkulator yang dipilih
+            const targetContent = document.getElementById(calcId);
+            targetContent.classList.remove('hidden');
+            targetContent.classList.add('block');
+
+            // Hapus status aktif dari semua tombol tab kalkulator
+            const buttons = document.querySelectorAll('.calc-tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-kopigreen-700', 'text-kopigreen-700');
+                btn.classList.add('border-transparent', 'text-slate-500');
+            });
+
+            // Tambah status aktif ke tombol tab yang dipilih
+            const targetButton = document.getElementById('btn-' + calcId);
+            targetButton.classList.add('border-kopigreen-700', 'text-kopigreen-700');
+            targetButton.classList.remove('border-transparent', 'text-slate-500');
+        }
+
+        // 4. Perhitungan Simulasi Pinjaman
+        function hitungPinjaman() {
+            const nominal = parseFloat(document.getElementById('pinjam-nominal').value) || 0;
+            const tenor = parseInt(document.getElementById('pinjam-tenor').value) || 12;
+            const bungaBulananPercent = 0.01; // Jasa bunga 1% tetap per bulan
+
+            if (nominal <= 0) {
+                document.getElementById('pinjam-hasil-angsuran').textContent = "Rp 0";
+                return;
+            }
+
+            // Rumus Angsuran Flat: (Nominal / Tenor) + (Nominal * % Bunga Bulanan)
+            const angsuranPokok = nominal / tenor;
+            const angsuranBunga = nominal * bungaBulananPercent;
+            const totalAngsuran = angsuranPokok + angsuranBunga;
+
+            // Format mata uang Rupiah
+            const formatted = formatRupiah(Math.round(totalAngsuran));
+            document.getElementById('pinjam-hasil-angsuran').textContent = formatted;
+        }
+
+        // 5. Perhitungan Simulasi Simpanan
+        function hitungSimpanan() {
+            const nominalAwal = parseFloat(document.getElementById('simpan-nominal').value) || 0;
+            const nominalRutin = parseFloat(document.getElementById('simpan-rutin').value) || 0;
+            const durasiBulan = parseInt(document.getElementById('simpan-durasi').value) || 12;
+            const bagiHasilTahunanPercent = 0.05; // 5% per tahun
+
+            // Akumulasi kas murni: awal + (rutin * durasi)
+            const kasMurni = nominalAwal + (nominalRutin * durasiBulan);
+            
+            // Estimasi keuntungan bunga majemuk sederhana
+            const estimasiBunga = kasMurni * (bagiHasilTahunanPercent * (durasiBulan / 12));
+            const totalTabungan = kasMurni + estimasiBunga;
+
+            const formatted = formatRupiah(Math.round(totalTabungan));
+            document.getElementById('simpan-hasil-total').textContent = formatted;
+        }
+
+        // Fungsi Pembantu: Format Mata Uang Rupiah
+        function formatRupiah(angka) {
+            return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        // Jalankan perhitungan awal sekali saat load halaman
+        window.addEventListener('DOMContentLoaded', () => {
+            hitungPinjaman();
+            hitungSimpanan();
+        });
+
+        // 6. Penanganan Formulir Kontak Mockup
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Sembunyikan form / tampilkan pesan berhasil
+            const form = document.getElementById('contact-form');
+            const alertBox = document.getElementById('contact-alert');
+
+            alertBox.classList.remove('hidden');
+            form.reset();
+
+            // Sembunyikan notifikasi setelah 8 detik
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 8000);
+        }
+    </script>
 </body>
 </html>
