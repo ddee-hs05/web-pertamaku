@@ -1,73 +1,67 @@
-/* 1. Reset dasar agar tampilan rapi di semua browser */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.nav-link{
+
+    color:white;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f7f6;
-    color: #333;
-    padding: 20px;
+.nav-link:hover{
+
+    color:#FBBF24;
+
 }
 
-/* 2. Menghias Header */
-header {
-    background: linear-gradient(135deg, #4f46e5, #06b6d4);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#FBBF24;
+
+    transition:.3s;
+
 }
 
-header h1 {
-    margin-bottom: 10px;
+.nav-link:hover::after{
+
+    width:100%;
+
 }
 
-/* 3. Menghias Area Konten Utama */
-main {
-    max-width: 800px;
-    margin: 0 auto;
+.mobile-link{
+
+    display:block;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    color:#334155;
+
+    font-weight:600;
+
+    transition:.3s;
+
 }
 
-.konten {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    text-align: center;
-}
+.mobile-link:hover{
 
-.konten h2 {
-    color: #4f46e5;
-    margin-bottom: 15px;
-}
+    background:#DCFCE7;
 
-/* 4. Menghias Tombol */
-button {
-    background-color: #4f46e5;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background 0.3s ease;
-}
+    color:#166534;
 
-button:hover {
-    background-color: #4338ca;
-}
-
-/* 5. Menghias Footer */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #777;
-    font-size: 14px;
 }
