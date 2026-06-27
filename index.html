@@ -2289,6 +2289,37 @@ Management System
     font-size:28px;
 
 }
+
+        document.querySelectorAll(".counter").forEach(counter=>{
+
+const target=+counter.dataset.target;
+
+let number=0;
+
+const update=()=>{
+
+const inc=target/80;
+
+number+=inc;
+
+if(number<target){
+
+counter.innerText=Math.ceil(number);
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerText=target+"+";
+
+}
+
+}
+
+update();
+
+});
+        
     </script>
     
 </body>
