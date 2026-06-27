@@ -282,10 +282,78 @@
             #166534 30%,
             #15803d 60%,
             #22c55e 100%);
-
+        
             background-size:250% 250%;
 
             animation:gradient 15s ease infinite;
+            
+        }
+        
+        .nav-link{
+
+            color:white;
+        
+            font-weight:500;
+        
+            position:relative;
+        
+            transition:.3s;
+        
+        }
+        
+        .nav-link:hover{
+        
+            color:#FBBF24;
+        
+        }
+        
+        .nav-link::after{
+        
+            content:"";
+        
+            position:absolute;
+        
+            left:0;
+        
+            bottom:-8px;
+        
+            width:0;
+        
+            height:2px;
+        
+            background:#FBBF24;
+        
+            transition:.3s;
+        
+        }
+        
+        .nav-link:hover::after{
+        
+            width:100%;
+        
+        }
+        
+        .mobile-link{
+        
+            display:block;
+        
+            padding:14px;
+        
+            border-radius:12px;
+        
+            color:#334155;
+        
+            font-weight:600;
+        
+            transition:.3s;
+        
+        }
+        
+        .mobile-link:hover{
+        
+            background:#DCFCE7;
+        
+            color:#166534;
 
         }
 
