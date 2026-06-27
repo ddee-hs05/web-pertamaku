@@ -664,6 +664,514 @@
     margin-bottom:25px;
 
 }
+
+/* =====================================================
+   SMART CALCULATOR KOPMGS
+   ===================================================== */
+
+.calculator-wrapper{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+.calculator-card{
+
+    background:#fff;
+
+    border-radius:30px;
+
+    padding:50px;
+
+    margin-top:30px;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:0 25px 60px rgba(15,23,42,.08);
+
+    transition:.35s;
+
+}
+
+.calculator-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 35px 70px rgba(15,23,42,.10);
+
+}
+
+/* ===================================
+TAB
+=================================== */
+
+.calc-tabs{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+.calc-tab{
+
+    border:none;
+
+    background:white;
+
+    padding:18px 35px;
+
+    border-radius:18px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#64748b;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+    border:1px solid #e2e8f0;
+
+}
+
+.calc-tab i{
+
+    margin-right:10px;
+
+}
+
+.calc-tab:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.calc-tab.active{
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+    color:white;
+
+    box-shadow:0 10px 30px rgba(34,197,94,.30);
+
+}
+
+/* ===================================
+LABEL
+=================================== */
+
+.calc-label{
+
+    display:block;
+
+    font-weight:700;
+
+    color:#1e293b;
+
+    margin-bottom:12px;
+
+}
+
+/* ===================================
+INPUT
+=================================== */
+
+.money-input{
+
+    display:flex;
+
+    align-items:center;
+
+    background:#f8fafc;
+
+    border:2px solid #e2e8f0;
+
+    border-radius:18px;
+
+    padding:0 22px;
+
+    transition:.3s;
+
+}
+
+.money-input:focus-within{
+
+    border-color:#16a34a;
+
+    background:white;
+
+    box-shadow:0 0 0 6px rgba(22,163,74,.08);
+
+}
+
+.money-input span{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#16a34a;
+
+    margin-right:10px;
+
+}
+
+.money-input input{
+
+    width:100%;
+
+    height:65px;
+
+    border:none;
+
+    background:none;
+
+    outline:none;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+/* ===================================
+SELECT
+=================================== */
+
+.calc-select{
+
+    width:100%;
+
+    height:65px;
+
+    border-radius:18px;
+
+    border:2px solid #e2e8f0;
+
+    padding:0 20px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+.calc-select:focus{
+
+    border-color:#16a34a;
+
+    outline:none;
+
+}
+
+/* ===================================
+INTEREST BOX
+=================================== */
+
+.interest-box{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#ecfdf5;
+
+    padding:18px 24px;
+
+    border-radius:18px;
+
+    color:#166534;
+
+    font-weight:700;
+
+}
+
+/* ===================================
+RESULT CARD
+=================================== */
+
+.result-card{
+
+    background:linear-gradient(180deg,#ffffff,#f8fafc);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    border:1px solid #e2e8f0;
+
+}
+
+.result-card h4{
+
+    font-size:28px;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+    color:#0f172a;
+
+}
+
+.result-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px dashed #dbe4ee;
+
+}
+
+.result-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.result-item span{
+
+    color:#64748b;
+
+}
+
+.result-item strong{
+
+    font-size:24px;
+
+    color:#0f172a;
+
+}
+
+/* ===================================
+PROGRESS
+=================================== */
+
+.progress-box{
+
+    margin-top:30px;
+
+}
+
+.progress-title{
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#e2e8f0;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#16a34a,#22c55e);
+
+    border-radius:999px;
+
+    transition:width .8s ease;
+
+}
+
+/* ===================================
+TIPS
+=================================== */
+
+.tips{
+
+    margin-top:30px;
+
+    background:#f8fafc;
+
+    padding:20px;
+
+    border-left:5px solid #16a34a;
+
+    border-radius:15px;
+
+    color:#334155;
+
+    line-height:1.8;
+
+}
+
+/* ===================================
+BUTTON
+=================================== */
+
+.calc-button{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:35px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.calc-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 35px rgba(34,197,94,.25);
+
+}
+
+/* ===================================
+ANIMATION
+=================================== */
+
+.result-card{
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+MOBILE
+=================================== */
+
+@media(max-width:992px){
+
+.calculator-card{
+
+padding:30px;
+
+}
+
+.money-input input{
+
+font-size:22px;
+
+}
+
+.result-item strong{
+
+font-size:20px;
+
+}
+
+.result-card{
+
+margin-top:20px;
+
+}
+
+}
+
+@media(max-width:640px){
+
+.calc-tabs{
+
+flex-direction:column;
+
+}
+
+.calc-tab{
+
+width:100%;
+
+}
+
+.money-input{
+
+padding:0 15px;
+
+}
+
+.money-input input{
+
+font-size:20px;
+
+height:58px;
+
+}
+
+.calc-select{
+
+height:58px;
+
+}
+
+.result-card{
+
+padding:25px;
+
+}
+
+}    
         
     </style>
 
@@ -2541,6 +3049,432 @@ Implementasi sistem digital untuk mendukung operasional koperasi.
 
 </section>
 
+<!-- SIMULASI & KALKULATIOR PINJAMAN -->
+
+<!-- =======================================================
+SMART CALCULATOR KOPMGS
+======================================================= -->
+
+<section id="calculator" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center max-w-3xl mx-auto">
+
+<span class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-100 text-primary-700 font-semibold">
+
+<i class="fa-solid fa-calculator"></i>
+
+Smart Calculator
+
+</span>
+
+<h2 class="mt-6 text-5xl font-heading font-bold text-slate-800">
+
+Hitung Simpanan & Pinjaman Anda
+
+</h2>
+
+<p class="mt-6 text-lg text-slate-600 leading-8">
+
+Simulasikan estimasi simpanan maupun pinjaman secara cepat. Seluruh perhitungan dilakukan otomatis tanpa perlu menekan tombol hitung.
+
+</p>
+
+</div>
+
+<!-- CARD -->
+
+<div class="calculator-wrapper mt-20">
+
+<!-- TAB -->
+
+<div class="calc-tabs">
+
+<button
+id="tabSaving"
+class="calc-tab active">
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+Simpanan
+
+</button>
+
+<button
+id="tabLoan"
+class="calc-tab">
+
+<i class="fa-solid fa-hand-holding-dollar"></i>
+
+Pinjaman
+
+</button>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="calculator-card">
+
+<!-- ==========================
+SIMPANAN
+========================== -->
+
+<div id="savingPanel">
+
+<div class="grid lg:grid-cols-2 gap-16">
+
+<!-- INPUT -->
+
+<div>
+
+<label class="calc-label">
+
+Nominal Simpanan
+
+</label>
+
+<div class="money-input">
+
+<span>Rp</span>
+
+<input
+id="savingAmount"
+type="text"
+value="10000000">
+
+</div>
+
+<label class="calc-label mt-8">
+
+Lama Menabung
+
+</label>
+
+<select
+id="savingMonth"
+class="calc-select">
+
+<option value="3">3 Bulan</option>
+
+<option value="6">6 Bulan</option>
+
+<option value="12" selected>12 Bulan</option>
+
+<option value="24">24 Bulan</option>
+
+<option value="36">36 Bulan</option>
+
+</select>
+
+<div class="interest-box mt-8">
+
+<div>
+
+Suku Bunga
+
+</div>
+
+<strong>
+
+5% / Tahun
+
+</strong>
+
+</div>
+
+</div>
+
+<!-- RESULT -->
+
+<div>
+
+<div class="result-card">
+
+<h4>
+
+Estimasi Hasil
+
+</h4>
+
+<div class="result-item">
+
+<span>Bunga</span>
+
+<strong id="savingInterest">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div class="result-item">
+
+<span>Total Simpanan</span>
+
+<strong
+class="text-primary-700"
+
+id="savingTotal">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-title">
+
+Komposisi
+
+</div>
+
+<div class="progress">
+
+<div
+id="savingProgress"
+class="progress-fill">
+
+</div>
+
+</div>
+
+<small>
+
+Pokok + Estimasi Bunga
+
+</small>
+
+</div>
+
+<div class="tips">
+
+🌱 Menabung secara konsisten membantu meningkatkan nilai simpanan Anda.
+
+</div>
+
+<a
+href="#daftar"
+
+class="calc-button">
+
+Daftar Menjadi Anggota
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ==========================
+PINJAMAN
+========================== -->
+
+<div
+id="loanPanel"
+style="display:none;">
+
+<div class="grid lg:grid-cols-2 gap-16">
+
+<!-- INPUT -->
+
+<div>
+
+<label class="calc-label">
+
+Jumlah Pinjaman
+
+</label>
+
+<div class="money-input">
+
+<span>Rp</span>
+
+<input
+id="loanAmount"
+type="text"
+value="10000000">
+
+</div>
+
+<label class="calc-label mt-8">
+
+Tenor
+
+</label>
+
+<select
+id="loanMonth"
+class="calc-select">
+
+<option value="3">
+
+3 Bulan
+
+</option>
+
+<option value="6">
+
+6 Bulan
+
+</option>
+
+<option value="10" selected>
+
+10 Bulan
+
+</option>
+
+<option value="12">
+
+12 Bulan
+
+</option>
+
+</select>
+
+<div class="interest-box mt-8">
+
+<div>
+
+Bunga Flat
+
+</div>
+
+<strong>
+
+2,5% / Bulan
+
+</strong>
+
+</div>
+
+</div>
+
+<!-- RESULT -->
+
+<div>
+
+<div class="result-card">
+
+<h4>
+
+Estimasi Angsuran
+
+</h4>
+
+<div class="result-item">
+
+<span>Total Bunga</span>
+
+<strong
+id="loanInterest">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div class="result-item">
+
+<span>Total Pembayaran</span>
+
+<strong
+id="loanTotal">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div class="result-item">
+
+<span>Angsuran / Bulan</span>
+
+<strong
+class="text-primary-700"
+
+id="loanInstallment">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-title">
+
+Komposisi Pembayaran
+
+</div>
+
+<div class="progress">
+
+<div
+id="loanProgress"
+class="progress-fill">
+
+</div>
+
+</div>
+
+<small>
+
+Pokok + Bunga
+
+</small>
+
+</div>
+
+<div class="tips">
+
+💡 Pastikan angsuran sesuai kemampuan finansial Anda setiap bulan.
+
+</div>
+
+<a
+href="#kontak"
+
+class="calc-button">
+
+Ajukan Pinjaman
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<p class="text-center text-sm text-slate-500 mt-10">
+
+*Simulasi ini hanya merupakan estimasi. Nilai aktual mengikuti kebijakan dan ketentuan KOPMGS yang berlaku.
+
+</p>
+
+</div>
+
+</section>
+    
     <!-- HUBUNGI KAMI & KONTAK -->
     <section id="kontak" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
