@@ -4185,6 +4185,189 @@ counter.innerText=target+"+";
 update();
 
 });
+
+/* ===========================================================
+   SMART CALCULATOR KOPMGS
+=========================================================== */
+
+const savingTab = document.getElementById("tabSaving");
+const loanTab = document.getElementById("tabLoan");
+
+const savingPanel = document.getElementById("savingPanel");
+const loanPanel = document.getElementById("loanPanel");
+
+/* ===========================================================
+TAB
+=========================================================== */
+
+savingTab.addEventListener("click", () => {
+
+    savingTab.classList.add("active");
+    loanTab.classList.remove("active");
+
+    savingPanel.style.display = "block";
+    loanPanel.style.display = "none";
+
+});
+
+loanTab.addEventListener("click", () => {
+
+    loanTab.classList.add("active");
+    savingTab.classList.remove("active");
+
+    loanPanel.style.display = "block";
+    savingPanel.style.display = "none";
+
+});
+
+
+/* ===========================================================
+FORMAT RUPIAH
+=========================================================== */
+
+function formatRupiah(angka){
+
+    return new Intl.NumberFormat('id-ID').format(angka);
+
+}
+
+function onlyNumber(value){
+
+    return value.replace(/\D/g,'');
+
+}
+
+/* ===========================================================
+INPUT FORMAT
+=========================================================== */
+
+const savingAmount = document.getElementById("savingAmount");
+const loanAmount = document.getElementById("loanAmount");
+
+savingAmount.addEventListener("input",function(){
+
+    let angka = onlyNumber(this.value);
+
+    if(angka=="") angka=0;
+
+    this.value = formatRupiah(angka);
+
+    calculateSaving();
+
+});
+
+loanAmount.addEventListener("input",function(){
+
+    let angka = onlyNumber(this.value);
+
+    if(angka=="") angka=0;
+
+    this.value = formatRupiah(angka);
+
+    calculateLoan();
+
+});
+
+
+/* ===========================================================
+SIMPANAN
+=========================================================== */
+
+const savingMonth=document.getElementById("savingMonth");
+
+savingMonth.addEventListener("change",calculateSaving);
+
+function calculateSaving(){
+
+    let nominal=parseInt(
+
+        onlyNumber(savingAmount.value)
+
+    );
+
+    if(isNaN(nominal)) nominal=0;
+
+    let bulan=parseInt(savingMonth.value);
+
+    let bunga= nominal * 0.05 * (bulan/12);
+
+    let total= nominal+bunga;
+
+    document.getElementById("savingInterest").innerHTML=
+
+        "Rp"+formatRupiah(Math.round(bunga));
+
+    document.getElementById("savingTotal").innerHTML=
+
+        "Rp"+formatRupiah(Math.round(total));
+
+    let persen=(bunga/total)*100;
+
+    document.getElementById("savingProgress").style.width=
+
+        persen+"%";
+
+}
+
+
+/* ===========================================================
+PINJAMAN
+=========================================================== */
+
+const loanMonth=document.getElementById("loanMonth");
+
+loanMonth.addEventListener("change",calculateLoan);
+
+function calculateLoan(){
+
+    let nominal=parseInt(
+
+        onlyNumber(loanAmount.value)
+
+    );
+
+    if(isNaN(nominal)) nominal=0;
+
+    let bulan=parseInt(loanMonth.value);
+
+    let bunga=nominal*0.025*bulan;
+
+    let total=nominal+bunga;
+
+    let angsuran=total/bulan;
+
+    document.getElementById("loanInterest").innerHTML=
+
+        "Rp"+formatRupiah(Math.round(bunga));
+
+    document.getElementById("loanTotal").innerHTML=
+
+        "Rp"+formatRupiah(Math.round(total));
+
+    document.getElementById("loanInstallment").innerHTML=
+
+        "Rp"+formatRupiah(Math.round(angsuran));
+
+    let persen=(nominal/total)*100;
+
+    document.getElementById("loanProgress").style.width=
+
+        persen+"%";
+
+}
+
+
+/* ===========================================================
+INITIAL
+=========================================================== */
+
+savingAmount.value=formatRupiah(10000000);
+
+loanAmount.value=formatRupiah(10000000);
+
+calculateSaving();
+
+calculateLoan();
         
     </script>
     
