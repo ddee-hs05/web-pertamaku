@@ -357,6 +357,62 @@
 
         }
 
+        /* =====================================
+   DIGITAL ECOSYSTEM
+===================================== */
+
+.eco-card{
+
+    transition:.35s;
+
+    border:1px solid #E2E8F0;
+
+}
+
+.eco-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+}
+
+.eco-line{
+
+    width:3px;
+
+    background:#16A34A;
+
+    height:70px;
+
+    margin:auto;
+
+}
+
+.eco-node{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:30px;
+
+    background:linear-gradient(135deg,#16A34A,#22C55E);
+
+    margin:auto;
+
+}
+
     </style>
 
 </head>
@@ -1359,185 +1415,269 @@ Mengembangkan otomatisasi proses bisnis menggunakan AI dan n8n untuk meningkatka
 </div>
 
 </section>
-    <!-- KENAPA MEMILIH KAMI? -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                
-                <!-- Kolom Teks -->
-                <div class="space-y-6">
-                    <div class="space-y-2">
-                        <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Keunggulan Koperasi</span>
-                        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">Mengapa Menjadi Anggota Koperasi Kami?</h2>
-                    </div>
-                    <p class="text-slate-600 leading-relaxed">
-                        Kami mengutamakan kesederhanaan proses, keamanan finansial, serta keterbukaan dalam pembagian SHU agar anggota dapat fokus mengembangkan potensi finansial keluarga tanpa cemas.
-                    </p>
+    <!-- DIGITAL? -->
+    <section id="digital" class="py-24 bg-white">
 
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 flex items-center justify-center w-6 h-6 rounded-full bg-kopigreen-100 text-kopigreen-700 text-xs">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Bunga Ringan & Fleksibel</h4>
-                                <p class="text-slate-500 text-sm">Bunga pinjaman menurun yang rendah untuk kemudahan modal produktif usaha.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 flex items-center justify-center w-6 h-6 rounded-full bg-kopigreen-100 text-kopigreen-700 text-xs">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Pembagian SHU Adil</h4>
-                                <p class="text-slate-500 text-sm">Keuntungan koperasi dibagikan secara transparan di setiap Rapat Anggota Tahunan (RAT).</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="mt-1 flex items-center justify-center w-6 h-6 rounded-full bg-kopigreen-100 text-kopigreen-700 text-xs">
-                                <i class="fa-solid fa-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Pendaftaran Berbasis Online</h4>
-                                <p class="text-slate-500 text-sm">Pantau simpanan dan lakukan pendaftaran secara cepat dan efisien tanpa harus mengantre lama.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="max-w-7xl mx-auto px-6">
 
-                <!-- Kolom Ilustrasi Kreatif -->
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-kopigreen-700 to-emerald-400 rounded-3xl opacity-10 blur-xl pointer-events-none"></div>
-                    <div class="bg-kopigreen-50 p-8 rounded-3xl border border-kopigreen-100 relative">
-                        <h3 class="font-heading font-bold text-2xl text-kopigreen-900 mb-6 text-center">Fasilitas Anggota</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
-                                <i class="fa-solid fa-sack-dollar text-3xl text-kopigold-500 mb-3"></i>
-                                <h5 class="font-bold text-slate-900 text-sm">Simpanan Sukarela</h5>
-                                <p class="text-slate-400 text-xs mt-1">Fleksibel diambil kapan saja</p>
-                            </div>
-                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
-                                <i class="fa-solid fa-umbrella text-3xl text-kopigreen-700 mb-3"></i>
-                                <h5 class="font-bold text-slate-900 text-sm">Dana Sosial</h5>
-                                <p class="text-slate-400 text-xs mt-1">Santunan rawat & duka</p>
-                            </div>
-                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
-                                <i class="fa-solid fa-graduation-cap text-3xl text-kopigreen-700 mb-3"></i>
-                                <h5 class="font-bold text-slate-900 text-sm">Beasiswa Anak</h5>
-                                <p class="text-slate-400 text-xs mt-1">Bagi putra/putri berprestasi</p>
-                            </div>
-                            <div class="bg-white p-5 rounded-2xl text-center shadow-sm">
-                                <i class="fa-solid fa-cart-shopping text-3xl text-kopigold-500 mb-3"></i>
-                                <h5 class="font-bold text-slate-900 text-sm">Potongan Retail</h5>
-                                <p class="text-slate-400 text-xs mt-1">Diskon belanja Waserda</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="text-center max-w-3xl mx-auto">
 
-            </div>
-        </div>
-    </section>
+<span
+class="inline-flex px-4 py-2 rounded-full bg-primary-100 text-primary-700 font-semibold">
 
-    <!-- SIMULASI KALKULATOR INTERAKTIF -->
-    <section id="simulasi" class="py-20 bg-slate-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center space-y-3 mb-12">
-                <span class="text-kopigreen-700 font-bold tracking-wider text-sm uppercase">Coba Sekarang</span>
-                <h2 class="font-heading font-bold text-3xl text-slate-900">Simulasi Simpanan & Pinjaman</h2>
-                <p class="text-slate-500 text-sm max-w-lg mx-auto">Gunakan kalkulator interaktif di bawah ini untuk melihat estimasi keuangan Anda secara cepat sebelum berkonsultasi.</p>
-            </div>
+Transformasi Digital
 
-            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-                <!-- Header Pilihan Simulasi -->
-                <div class="flex border-b border-slate-200 bg-slate-50">
-                    <button onclick="switchCalc('calc-pinjaman')" id="btn-calc-pinjaman" class="calc-tab-btn flex-1 py-4 text-center font-heading font-bold text-base border-b-2 border-kopigreen-700 text-kopigreen-700 transition-all focus:outline-none">
-                        <i class="fa-solid fa-hand-holding-dollar mr-2"></i> Simulasi Pinjaman
-                    </button>
-                    <button onclick="switchCalc('calc-simpanan')" id="btn-calc-simpanan" class="calc-tab-btn flex-1 py-4 text-center font-heading font-bold text-base border-b-2 border-transparent text-slate-500 hover:text-kopigreen-700 transition-all focus:outline-none">
-                        <i class="fa-solid fa-piggy-bank mr-2"></i> Simulasi Tabungan/Simpanan
-                    </button>
-                </div>
+</span>
 
-                <!-- Area Formulir Kalkulator -->
-                <div class="p-8">
-                    <!-- Kalkulator 1: Pinjaman -->
-                    <div id="calc-pinjaman" class="calc-content block space-y-6">
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="block text-sm font-bold text-slate-700">Jumlah Pinjaman (Rupiah)</label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold">Rp</span>
-                                    <input type="number" id="pinjam-nominal" value="10000000" step="500000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" oninput="hitungPinjaman()">
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="block text-sm font-bold text-slate-700">Jangka Waktu / Tenor</label>
-                                <select id="pinjam-tenor" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" onchange="hitungPinjaman()">
-                                    <option value="3">3 Bulan</option>
-                                    <option value="6" selected>6 Bulan</option>
-                                    <option value="10">10 Bulan</option>
-                                    <option value="12">12 Bulan</option>
-                                </select>
-                            </div>
-                        </div>
+<h2 class="mt-6 text-5xl font-heading font-bold">
 
-                        <!-- Hasil Kalkulasi Pinjaman -->
-                        <div class="bg-kopigreen-50 rounded-2xl p-6 border border-kopigreen-100 flex flex-col sm:flex-row items-center justify-between gap-6">
-                            <div>
-                                <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider">Estimasi Angsuran per Bulan</span>
-                                <span id="pinjam-hasil-angsuran" class="block font-heading font-extrabold text-3xl text-kopigreen-900 mt-1">Rp 933.333</span>
-                                <span class="block text-[11px] text-slate-400 mt-1">*Sudah termasuk jasa/bunga 2.5% per bulan (tetap)</span>
-                            </div>
-                            <a href="#gabung" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-kopigreen-700 hover:bg-kopigreen-800 text-white font-bold text-sm transition-all shadow-md shadow-kopigreen-800/10">
-                                Ajukan Pembiayaan
-                            </a>
-                        </div>
-                    </div>
+Ekosistem Digital KOPMGS
 
-                    <!-- Kalkulator 2: Simpanan -->
-                    <div id="calc-simpanan" class="calc-content hidden space-y-6">
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="block text-sm font-bold text-slate-700">Setoran Awal (Rupiah)</label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold">Rp</span>
-                                    <input type="number" id="simpan-nominal" value="1000000" step="100000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" oninput="hitungSimpanan()">
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="block text-sm font-bold text-slate-700">Setoran Rutin Bulanan</label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400 font-semibold">Rp</span>
-                                    <input type="number" id="simpan-rutin" value="200000" step="50000" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" oninput="hitungSimpanan()">
-                                </div>
-                            </div>
-                            <div class="space-y-2 sm:col-span-2">
-                                <label class="block text-sm font-bold text-slate-700">Durasi Menabung</label>
-                                <select id="simpan-durasi" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-kopigreen-700" onchange="hitungSimpanan()">
-                                    <option value="12" selected>1 Tahun (12 Bulan)</option>
-                                    <option value="24">2 Tahun (24 Bulan)</option>
-                                    <option value="36">3 Tahun (36 Bulan)</option>
-                                </select>
-                            </div>
-                        </div>
+</h2>
 
-                        <!-- Hasil Kalkulasi Simpanan -->
-                        <div class="bg-kopigreen-50 rounded-2xl p-6 border border-kopigreen-100 flex flex-col sm:flex-row items-center justify-between gap-6">
-                            <div>
-                                <span class="block text-xs text-slate-500 font-medium uppercase tracking-wider">Estimasi Total Hasil Tabungan</span>
-                                <span id="simpan-hasil-total" class="block font-heading font-extrabold text-3xl text-kopigreen-900 mt-1">Rp 3.520.000</span>
-                                <span class="block text-[11px] text-slate-400 mt-1">*Estimasi bunga/bagi hasil setara 5% per tahun</span>
-                            </div>
-                            <a href="#gabung" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-kopigreen-700 hover:bg-kopigreen-800 text-white font-bold text-sm transition-all shadow-md shadow-kopigreen-800/10">
-                                Mulai Menabung
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<p class="mt-6 text-lg text-slate-600 leading-8">
+
+KOPMGS membangun sistem yang saling terhubung untuk meningkatkan transparansi,
+efisiensi operasional, serta pelayanan anggota melalui teknologi digital.
+
+</p>
+
+</div>
+
+<!-- FLOW -->
+
+<div class="mt-20">
+
+<div class="eco-node">
+
+<i class="fa-solid fa-globe"></i>
+
+</div>
+
+<h3 class="text-center text-2xl font-bold mt-5">
+
+Website KOPMGS
+
+</h3>
+
+<div class="eco-line"></div>
+
+<div class="eco-node">
+
+<i class="fa-solid fa-server"></i>
+
+</div>
+
+<h3 class="text-center text-2xl font-bold mt-5">
+
+Odoo ERP
+
+</h3>
+
+<div class="grid lg:grid-cols-4 gap-8 mt-14">
+
+<div class="eco-card rounded-3xl p-8 text-center">
+
+<i class="fa-solid fa-money-bill-wave text-5xl text-primary-700"></i>
+
+<h4 class="mt-6 text-xl font-bold">
+
+Finance
+
+</h4>
+
+<p class="mt-3 text-slate-600">
+
+Akuntansi, SHU, Kas, Bank dan Pelaporan Keuangan.
+
+</p>
+
+</div>
+
+<div class="eco-card rounded-3xl p-8 text-center">
+
+<i class="fa-solid fa-boxes-stacked text-5xl text-primary-700"></i>
+
+<h4 class="mt-6 text-xl font-bold">
+
+Procurement
+
+</h4>
+
+<p class="mt-3 text-slate-600">
+
+Purchase Request, Purchase Order, Supplier dan Inventory.
+
+</p>
+
+</div>
+
+<div class="eco-card rounded-3xl p-8 text-center">
+
+<i class="fa-solid fa-users text-5xl text-primary-700"></i>
+
+<h4 class="mt-6 text-xl font-bold">
+
+Human Resource
+
+</h4>
+
+<p class="mt-3 text-slate-600">
+
+Absensi, Payroll, Kontrak Kerja dan Penilaian Kinerja.
+
+</p>
+
+</div>
+
+<div class="eco-card rounded-3xl p-8 text-center">
+
+<i class="fa-solid fa-store text-5xl text-primary-700"></i>
+
+<h4 class="mt-6 text-xl font-bold">
+
+Retail
+
+</h4>
+
+<p class="mt-3 text-slate-600">
+
+Penjualan Waserda dan pengelolaan stok barang koperasi.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="eco-line mt-14"></div>
+
+<div class="eco-node">
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+</div>
+
+<h3 class="text-center text-2xl font-bold mt-5">
+
+AppSheet Mobile
+
+</h3>
+
+<div class="eco-line"></div>
+
+<div class="eco-node">
+
+<i class="fa-solid fa-robot"></i>
+
+</div>
+
+<h3 class="text-center text-2xl font-bold mt-5">
+
+Artificial Intelligence
+
+</h3>
+
+<div class="eco-line"></div>
+
+<div class="eco-node">
+
+<i class="fa-solid fa-arrows-rotate"></i>
+
+</div>
+
+<h3 class="text-center text-2xl font-bold mt-5">
+
+n8n Workflow Automation
+
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+    <!-- STATISTIK -->
+    <section class="py-24 bg-primary-800">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="grid lg:grid-cols-4 gap-8">
+
+<div class="bg-white/10 rounded-3xl p-8 text-center backdrop-blur">
+
+<h2 class="text-5xl font-bold text-white counter"
+
+data-target="350">
+
+0
+
+</h2>
+
+<p class="mt-4 text-primary-100">
+
+Anggota Aktif
+
+</p>
+
+</div>
+
+<div class="bg-white/10 rounded-3xl p-8 text-center backdrop-blur">
+
+<h2 class="text-5xl font-bold text-white counter"
+
+data-target="15">
+
+0
+
+</h2>
+
+<p class="mt-4 text-primary-100">
+
+Supplier Mitra
+
+</p>
+
+</div>
+
+<div class="bg-white/10 rounded-3xl p-8 text-center backdrop-blur">
+
+<h2 class="text-5xl font-bold text-white">
+
+24/7
+
+</h2>
+
+<p class="mt-4 text-primary-100">
+
+Layanan Digital
+
+</p>
+
+</div>
+
+<div class="bg-white/10 rounded-3xl p-8 text-center backdrop-blur">
+
+<h2 class="text-5xl font-bold text-white">
+
+ERP
+
+</h2>
+
+<p class="mt-4 text-primary-100">
+
+Management System
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
     <!-- ALUR GABUNG ANGGOTA -->
     <section id="gabung" class="py-20 bg-white">
