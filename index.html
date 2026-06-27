@@ -3,43 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koperasi Mitra Gemilang Sulawesi</title>
-    <!-- Google Fonts: Poppins & Inter -->
+
+    <!-- Primary SEO -->
+    <title>KOPMGS | Koperasi Mitra Gemilang Sulawesi</title>
+
+    <meta name="title" content="KOPMGS | Koperasi Mitra Gemilang Sulawesi">
+    <meta name="description"
+        content="Koperasi Mitra Gemilang Sulawesi (KOPMGS) merupakan koperasi modern yang mengintegrasikan layanan simpan pinjam, pengadaan barang, retail koperasi, dan transformasi digital berbasis Odoo ERP.">
+
+    <meta name="keywords"
+        content="koperasi, koperasi modern, koperasi digital, koperasi makassar, koperasi sulawesi, koperasi indonesia, odoo koperasi, pengadaan barang, simpan pinjam">
+
+    <meta name="author" content="KOPMGS">
+    <meta name="robots" content="index, follow">
+
+    <meta name="theme-color" content="#166534">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+
+    <!-- Ganti nanti dengan domain GitHub Pages -->
+    <meta property="og:url" content="https://kopmgs.github.io/">
+
+    <meta property="og:title" content="KOPMGS | Koperasi Mitra Gemilang Sulawesi">
+
+    <meta property="og:description"
+        content="Transformasi Koperasi Menuju Era Digital dengan layanan Simpan Pinjam, Pengadaan Barang, Retail, dan ERP Modern.">
+
+    <!-- nanti diganti logo -->
+    <meta property="og:image"
+        content="assets/images/hero.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+
+    <meta property="twitter:title"
+        content="KOPMGS | Koperasi Mitra Gemilang Sulawesi">
+
+    <meta property="twitter:description"
+        content="Koperasi Digital Modern berbasis ERP, AI, dan Otomasi Bisnis.">
+
+    <meta property="twitter:image"
+        content="assets/images/hero.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tailwind CSS CDN -->
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
+
         tailwind.config = {
+
             theme: {
+
                 extend: {
+
                     colors: {
-                        kopigreen: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
+
+                        primary: {
+
+                            50:'#f0fdf4',
+
+                            100:'#dcfce7',
+
+                            200:'#bbf7d0',
+
+                            300:'#86efac',
+
+                            400:'#4ade80',
+
+                            500:'#22c55e',
+
+                            600:'#16a34a',
+
+                            700:'#15803d',
+
+                            800:'#166534',
+
+                            900:'#14532d'
+
                         },
-                        kopigold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
+
+                        gold:{
+
+                            100:'#FEF3C7',
+
+                            200:'#FDE68A',
+
+                            300:'#FCD34D',
+
+                            400:'#FBBF24',
+
+                            500:'#F59E0B',
+
+                            600:'#D97706'
+
+                        },
+
+                        dark:{
+
+                            900:'#0F172A'
+
                         }
+
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
+
+                    fontFamily:{
+
+                        heading:['Poppins','sans-serif'],
+
+                        sans:['Inter','sans-serif']
+
+                    },
+
+                    boxShadow:{
+
+                        glow:'0 10px 40px rgba(22,163,74,.25)',
+
+                        card:'0 10px 30px rgba(15,23,42,.08)',
+
+                        soft:'0 20px 60px rgba(0,0,0,.08)'
+
+                    },
+
+                    animation:{
+
+                        float:'float 6s ease-in-out infinite',
+
+                        pulseSlow:'pulse 5s infinite',
+
+                        gradient:'gradient 12s ease infinite'
+
+                    },
+
+                    keyframes:{
+
+                        float:{
+
+                            '0%,100%':{
+
+                                transform:'translateY(0px)'
+
+                            },
+
+                            '50%':{
+
+                                transform:'translateY(-12px)'
+
+                            }
+
+                        },
+
+                        gradient:{
+
+                            '0%':{
+
+                                backgroundPosition:'0% 50%'
+
+                            },
+
+                            '50%':{
+
+                                backgroundPosition:'100% 50%'
+
+                            },
+
+                            '100%':{
+
+                                backgroundPosition:'0% 50%'
+
+                            }
+
+                        }
+
                     }
+
                 }
+
             }
+
         }
+
     </script>
+
+    <style>
+
+        html{
+
+            scroll-behavior:smooth;
+
+        }
+
+        body{
+
+            font-family:'Inter',sans-serif;
+
+            background:#f8fafc;
+
+            color:#1e293b;
+
+            overflow-x:hidden;
+
+        }
+
+        h1,h2,h3,h4,h5{
+
+            font-family:'Poppins',sans-serif;
+
+        }
+
+        ::selection{
+
+            background:#16a34a;
+
+            color:white;
+
+        }
+
+        ::-webkit-scrollbar{
+
+            width:10px;
+
+        }
+
+        ::-webkit-scrollbar-track{
+
+            background:#ecfdf5;
+
+        }
+
+        ::-webkit-scrollbar-thumb{
+
+            background:#16a34a;
+
+            border-radius:30px;
+
+        }
+
+        ::-webkit-scrollbar-thumb:hover{
+
+            background:#14532d;
+
+        }
+
+        .glass{
+
+            background:rgba(255,255,255,.7);
+
+            backdrop-filter:blur(18px);
+
+        }
+
+        .hero-gradient{
+
+            background:linear-gradient(
+            135deg,
+            #14532d 0%,
+            #166534 30%,
+            #15803d 60%,
+            #22c55e 100%);
+
+            background-size:250% 250%;
+
+            animation:gradient 15s ease infinite;
+
+        }
+
+    </style>
+
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 antialiased overflow-x-hidden">
 
