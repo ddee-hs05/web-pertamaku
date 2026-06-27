@@ -1,12 +1,71 @@
-// 1. Mengambil elemen tombol berdasarkan ID yang sudah kita buat di HTML
-const tombol = document.getElementById('tombolAksi');
+const menuButton=document.getElementById("menuButton");
 
-// 2. Menambahkan fungsi ketika tombol tersebut diklik
-tombol.addEventListener('click', function() {
-    // Memunculkan pesan pop-up di browser
-    alert('Halo! Terima kasih sudah mengklik tombol ini. JavaScript kamu berhasil berfungsi!');
-    
-    // Opsional: Mengubah warna latar belakang tombol secara acak setelah diklik
-    const warnaAcak = '#' + Math.floor(Math.random()*16777215).toString(16);
-    tombol.style.backgroundColor = warnaAcak;
+const closeMenu=document.getElementById("closeMenu");
+
+const mobileMenu=document.getElementById("mobileMenu");
+
+const overlay=document.getElementById("overlay");
+
+menuButton.onclick=()=>{
+
+mobileMenu.style.right="0";
+
+overlay.classList.remove("hidden");
+
+}
+
+closeMenu.onclick=()=>{
+
+mobileMenu.style.right="-100%";
+
+overlay.classList.add("hidden");
+
+}
+
+overlay.onclick=()=>{
+
+mobileMenu.style.right="-100%";
+
+overlay.classList.add("hidden");
+
+}
+
+window.addEventListener("scroll",()=>{
+
+const nav=document.getElementById("navbar");
+
+if(window.scrollY>50){
+
+nav.classList.add("glass");
+
+nav.classList.add("shadow-card");
+
+nav.querySelectorAll(".nav-link").forEach(item=>{
+
+item.style.color="#1e293b";
+
+});
+
+nav.querySelector("h2").style.color="#166534";
+
+nav.querySelector("span").style.color="#64748b";
+
+}else{
+
+nav.classList.remove("glass");
+
+nav.classList.remove("shadow-card");
+
+nav.querySelectorAll(".nav-link").forEach(item=>{
+
+item.style.color="white";
+
+});
+
+nav.querySelector("h2").style.color="white";
+
+nav.querySelector("span").style.color="rgba(255,255,255,.7)";
+
+}
+
 });
